@@ -13,7 +13,7 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isFormValid = ref.watch(isFormValidProvider);
+    //final isFormValid = ref.watch(isFormValidProvider);
 
     return Scaffold(
       appBar: AppBar(title: const Text(AppStrings.homeTitle)),
@@ -56,11 +56,11 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
-  void _resetForm(WidgetRef ref) {
-    ref.read(billAmountProvider.notifier).state = 0.0;
-    ref.read(numberOfPeopleProvider.notifier).state =
-        AppConstants.defaultPeople;
-    ref.read(tipPercentageProvider.notifier).state =
-        AppConstants.defaultTipPercentage;
-  }
+  // void _resetForm(WidgetRef ref) {
+  //   ref.read(billAmountProvider.notifier).state = 0.0;
+  //   ref.read(numberOfPeopleProvider.notifier).state =
+  //       AppConstants.defaultPeople;
+  //   ref.read(tipPercentageProvider.notifier).state =
+  //       AppConstants.defaultTipPercentage;
+  // }
 }
