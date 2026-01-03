@@ -13,7 +13,7 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    //final isFormValid = ref.watch(isFormValidProvider);
+    final isFormValid = ref.watch(isFormValidProvider);
 
     return Scaffold(
       appBar: AppBar(title: const Text(AppStrings.homeTitle)),
@@ -24,31 +24,31 @@ class HomeScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               // Bill Amount Input
-              // const BillAmountInput(),
-              // const SizedBox(height: AppConstants.paddingLarge),
+              const BillAmountInput(),
+              const SizedBox(height: AppConstants.paddingLarge),
 
-              // // People Selector
-              // const PeopleSelector(),
-              // const SizedBox(height: AppConstants.paddingLarge),
+              // People Selector
+              const PeopleSelector(),
+              const SizedBox(height: AppConstants.paddingLarge),
 
-              // // Tip Selector
-              // const TipSelector(),
-              // const SizedBox(height: AppConstants.paddingLarge),
+              // Tip Selector
+              const TipSelector(),
+              const SizedBox(height: AppConstants.paddingLarge),
 
-              // // Reset Button
-              // if (isFormValid)
-              //   TextButton.icon(
-              //     onPressed: () => _resetForm(ref),
-              //     icon: const Icon(Icons.refresh),
-              //     label: const Text(AppStrings.resetButton),
-              //   ),
+              // Reset Button
+              if (isFormValid)
+                TextButton.icon(
+                  onPressed: () => _resetForm(ref),
+                  icon: const Icon(Icons.refresh),
+                  label: const Text(AppStrings.resetButton),
+                ),
 
-              // const SizedBox(height: AppConstants.paddingMedium),
+              const SizedBox(height: AppConstants.paddingMedium),
 
-              // // Results Card
-              // const ResultCard(),
+              // Results Card
+              const ResultCard(),
 
-              // const SizedBox(height: AppConstants.paddingLarge),
+              const SizedBox(height: AppConstants.paddingLarge),
             ],
           ),
         ),
@@ -56,11 +56,11 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
-  // void _resetForm(WidgetRef ref) {
-  //   ref.read(billAmountProvider.notifier).state = 0.0;
-  //   ref.read(numberOfPeopleProvider.notifier).state =
-  //       AppConstants.defaultPeople;
-  //   ref.read(tipPercentageProvider.notifier).state =
-  //       AppConstants.defaultTipPercentage;
-  // }
+  void _resetForm(WidgetRef ref) {
+    ref.read(billAmountProvider.notifier).state = 0.0;
+    ref.read(numberOfPeopleProvider.notifier).state =
+        AppConstants.defaultPeople;
+    ref.read(tipPercentageProvider.notifier).state =
+        AppConstants.defaultTipPercentage;
+  }
 }
